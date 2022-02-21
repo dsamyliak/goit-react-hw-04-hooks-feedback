@@ -1,0 +1,19 @@
+.Feedback__Counter {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  width: 500px;
+  height: auto;
+  background-color: rgb(20, 0, 46);
+  color: white;
+  border-radius: 10px;
+}
+
+h2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: x-large;
+  color: white;
+  margin: 0;
+  margin-bottom: 20px;
+}

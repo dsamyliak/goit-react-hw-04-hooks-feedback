@@ -1,0 +1,38 @@
+.Feedback__Statistics {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.Result {
+  margin-right: 10px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 900;
+}
+.Result .Value {
+  font-size: xx-large;
+  background-color: white;
+  padding: 0 10px 0;
+  border-radius: 5px;
+}
+.Good.Value,
+.Positive__Percentage.Value {
+  color: green;
+}
+.Neutral.Value {
+  color: orange;
+}
+.Bad.Value {
+  color: red;
+}
+.Additional__Statistics {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.Total.Value {
+  color: black;
+}
