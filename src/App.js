@@ -1,79 +1,95 @@
 import "./index.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Section from "./components/Section/Section";
 import FeedbackOptions from "./components/FeedbackOptions/FeedbackOptions";
 import Statistics from "./components/Statistics/Statistics";
 import Notification from "./components/Notification/Notification";
 import PropTypes from "prop-types";
 
-class App extends React.Component {
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+export default function FeedbackApp() {
+  const [good, setGood] = useState(0);
+  const [neutral, setNeutral] = useState(0);
+  const [bad, setBad] = useState(0);
+  const [total, setTotal] = useState(0);
+  let [positivePercentage, setPositivePercentage] = useState(0);
+
+  const addGoodFb = () => {
+    setGood((prevState) => prevState + 1);
   };
 
-  handleClick = (option) => {
-    this.setState((prevState) => ({ [option]: prevState[option] + 1 }));
+  const addNeutralFb = () => {
+    setNeutral((prevState) => prevState + 1);
   };
 
-  countTotalFeedback = () => {
-    const { good, neutral, bad } = this.state;
-    let total = good + neutral + bad;
-    return total;
+  const addBadFb = () => {
+    setBad((prevState) => prevState + 1);
   };
 
-  countPositiveFeedbackPercentage = () => {
-    const { good } = this.state;
-    let positivePercentage = Math.round(
-      good > 0 ? (good / this.countTotalFeedback()) * 100 : 0
-    );
+  const handleClick = (option) => {
+    console.log(option);
+    switch (option) {
+      case "good":
+        addGoodFb();
+        break;
 
-    return positivePercentage;
+      case "neutral":
+        addNeutralFb();
+        break;
+
+      case "bad":
+        addBadFb();
+        break;
+
+      default:
+        return;
+    }
   };
 
-  render() {
-    const { good, neutral, bad } = this.state;
-    let total = good + neutral + bad;
+  useEffect(() => {
+    // console.log("useEffect Total");
+    setTotal(good + neutral + bad);
+    console.log("useEf total=", good + neutral + bad);
+  }, [good, neutral, bad]);
 
-    console.log(Object.keys(this.state));
-    console.log(this.countTotalFeedback());
-    console.log(this.countPositiveFeedbackPercentage());
+  useEffect(() => {
+    // console.log("useEffect PositivePercentage");
+    setPositivePercentage(Math.round(good > 0 ? (good / total) * 100 : 0));
+    console.log("positivePercentage", positivePercentage);
+  }, [good, total, positivePercentage]);
 
-    return (
-      <>
-        <Section title="Please leave feedback">
-          <FeedbackOptions
-            options={Object.keys(this.state)}
-            onLeaveFeedback={this.handleClick}
-          ></FeedbackOptions>
-        </Section>
-        <Section title="Statistics">
-          {total > 0 ? (
-            <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
-            ></Statistics>
-          ) : (
-            <Notification message="There is no feedback"></Notification>
-          )}
-        </Section>
-      </>
-    );
-  }
+  return (
+    <>
+      <Section title="Please leave feedback">
+        <FeedbackOptions
+          options={Object.keys({ good, neutral, bad })}
+          onLeaveFeedback={handleClick}
+        ></FeedbackOptions>
+      </Section>
+      <Section title="Statistics">
+        {total > 0 ? (
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positivePercentage={positivePercentage}
+          ></Statistics>
+        ) : (
+          <Notification message="There is no feedback"></Notification>
+        )}
+      </Section>
+    </>
+  );
 }
 
-App.propTypes = {
+FeedbackApp.propTypes = {
   state: PropTypes.arrayOf(
     PropTypes.shape({
       good: PropTypes.number.isRequired,
       neutral: PropTypes.number.isRequired,
       bad: PropTypes.number.isRequired,
+      total: PropTypes.number.isRequired,
+      positivePercentage: PropTypes.number.isRequired,
     })
   ),
 };
-
-export default App;
