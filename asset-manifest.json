@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-04-hooks-feedback/static/css/main.3e0456da.css",
-    "main.js": "/goit-react-hw-04-hooks-feedback/static/js/main.e533cb5e.js",
+    "main.css": "/goit-react-hw-04-hooks-feedback/static/css/main.7200bc7d.css",
+    "main.js": "/goit-react-hw-04-hooks-feedback/static/js/main.c2e78fe0.js",
     "static/js/787.eaa79d3a.chunk.js": "/goit-react-hw-04-hooks-feedback/static/js/787.eaa79d3a.chunk.js",
     "index.html": "/goit-react-hw-04-hooks-feedback/index.html",
-    "main.3e0456da.css.map": "/goit-react-hw-04-hooks-feedback/static/css/main.3e0456da.css.map",
-    "main.e533cb5e.js.map": "/goit-react-hw-04-hooks-feedback/static/js/main.e533cb5e.js.map",
+    "main.7200bc7d.css.map": "/goit-react-hw-04-hooks-feedback/static/css/main.7200bc7d.css.map",
+    "main.c2e78fe0.js.map": "/goit-react-hw-04-hooks-feedback/static/js/main.c2e78fe0.js.map",
     "787.eaa79d3a.chunk.js.map": "/goit-react-hw-04-hooks-feedback/static/js/787.eaa79d3a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e0456da.css",
-    "static/js/main.e533cb5e.js"
+    "static/css/main.7200bc7d.css",
+    "static/js/main.c2e78fe0.js"
   ]
 }
