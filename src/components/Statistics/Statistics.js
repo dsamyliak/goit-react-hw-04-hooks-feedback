@@ -1,33 +1,35 @@
 import React from "react";
-import "./Statistics.css";
+import styles from "./Statistics.module.css";
 import propTypes from "prop-types";
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
-  <>
-    <div className="Feedback__Statistics">
-      <span className="Good Result">
-        Good: <span className="Good Value">{good}</span>
-      </span>
-      <span className="Neutral Result">
-        Neutral: <span className="Neutral Value">{neutral}</span>
-      </span>
-      <span className="Bad Result">
-        Bad: <span className="Bad Value">{bad}</span>
-      </span>
-    </div>
-    <div className="Additional__Statistics">
-      <span className="Total Result">
-        Total: <span className="Total Value">{total}</span>
-      </span>
-      <span className="Positive__Percentage Result">
-        Positive feedback:{" "}
-        <span className="Positive__Percentage Value">
-          {positivePercentage}%
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+  return (
+    <>
+      <div className={styles.Feedback__Statistics}>
+        <span className={(styles.Good, styles.Result)}>
+          Good: <span className={styles.Good}>{good}</span>
         </span>
-      </span>
-    </div>
-  </>
-);
+        <span className={(styles.Neutral, styles.Result)}>
+          Neutral: <span className={styles.Neutral}>{neutral}</span>
+        </span>
+        <span className={(styles.Bad, styles.Result)}>
+          Bad: <span className={styles.Bad}>{bad}</span>
+        </span>
+      </div>
+      <div className={styles.Additional__Statistics}>
+        <span className={styles.Result}>
+          Total: <span className={styles.Total}>{total}</span>
+        </span>
+        <span className={(styles.Positive__Percentage, styles.Result)}>
+          Positive feedback:{" "}
+          <span className={styles.Positive__Percentage}>
+            {positivePercentage}%
+          </span>
+        </span>
+      </div>
+    </>
+  );
+};
 
 Statistics.propTypes = {
   good: propTypes.number.isRequired,

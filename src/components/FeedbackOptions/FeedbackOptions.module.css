@@ -5,7 +5,7 @@
   margin-bottom: 20px;
 }
 
-.Btn {
+.button {
   width: 90px;
   height: 40px;
   background-color: gray;
@@ -15,17 +15,18 @@
   color: white;
   margin-right: 10px;
 }
-:hover.Btn {
+.button:hover {
   border-radius: 3px;
   border: rgb(20, 0, 46) solid 1px;
+  cursor: pointer;
 }
 
-.Good.Btn {
+.good {
   background-color: green;
 }
-.Neutral.Btn {
+.neutral {
   background-color: orange;
 }
-.Bad.Btn {
+.bad {
   background-color: red;
 }
