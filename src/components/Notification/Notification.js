@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Notification.module.css";
+import css from "./Notification.module.css";
 import PropTypes from "prop-types";
 
 const Notification = ({ message }) => (
-  <div className={styles.NoFeedback__Statistics}>
-    <span className={styles.NoFeedback__Msg}>{message}</span>
+  <div className={css.NoFeedback__Statistics}>
+    <span className={css.NoFeedback__Msg}>{message}</span>
   </div>
 );
 

@@ -1,28 +1,28 @@
 import React from "react";
-import styles from "./Statistics.module.css";
+import css from "./Statistics.module.css";
 import propTypes from "prop-types";
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <>
-      <div className={styles.Feedback__Statistics}>
-        <span className={(styles.Good, styles.Result)}>
-          Good: <span className={styles.Good}>{good}</span>
+      <div className={css.Feedback__Statistics}>
+        <span className={(css.Good, css.Result)}>
+          Good: <span className={css.Good}>{good}</span>
         </span>
-        <span className={(styles.Neutral, styles.Result)}>
-          Neutral: <span className={styles.Neutral}>{neutral}</span>
+        <span className={(css.Neutral, css.Result)}>
+          Neutral: <span className={css.Neutral}>{neutral}</span>
         </span>
-        <span className={(styles.Bad, styles.Result)}>
-          Bad: <span className={styles.Bad}>{bad}</span>
+        <span className={(css.Bad, css.Result)}>
+          Bad: <span className={css.Bad}>{bad}</span>
         </span>
       </div>
-      <div className={styles.Additional__Statistics}>
-        <span className={styles.Result}>
-          Total: <span className={styles.Total}>{total}</span>
+      <div className={css.Additional__Statistics}>
+        <span className={css.Result}>
+          Total: <span className={css.Total}>{total}</span>
         </span>
-        <span className={(styles.Positive__Percentage, styles.Result)}>
+        <span className={(css.Positive__Percentage, css.Result)}>
           Positive feedback:{" "}
-          <span className={styles.Positive__Percentage}>
+          <span className={css.Positive__Percentage}>
             {positivePercentage}%
           </span>
         </span>
